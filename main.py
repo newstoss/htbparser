@@ -31,7 +31,7 @@ from time import sleep
 #     write.writerows([data])
 fields = ['pnames', 'pid', 'pprourls']
 
-for page in range(1, 926):
+for page in range(741, 926):
     x = randint(2, 8)
     print(f'Sleeping {x} seconds')
     sleep(x)
@@ -41,6 +41,7 @@ for page in range(1, 926):
 
     soup = BeautifulSoup(req.text, 'html.parser')
     print(f'On Page {page}')
+
     pnames = soup.find_all('p', attrs={'class', 'font-size15 font-weight500 color-white mb-0'})
     pids = soup.find_all('p', attrs={'class', 'font-size13 line-height-18 mb-0'})
     pprourls = soup.find_all('a', attrs={'class', 'text-decoration-none'})
